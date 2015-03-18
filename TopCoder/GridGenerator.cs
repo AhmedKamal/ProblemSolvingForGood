@@ -22,7 +22,7 @@ public class GridGenerator
 
 		for (int i = 1; i < row.Length; i++)
 			{
-			    grid[i , 0] = col[i];
+				grid[i , 0] = col[i];
 			}
 
 		for (int i = 0; i < row.Length; i++)
@@ -38,16 +38,16 @@ public class GridGenerator
 
 				}
 
-                if (i !=0)
-	            {
-		             upper = grid[i-1 , j];
-	            }
+				if (i !=0)
+				{
+					 upper = grid[i-1 , j];
+				}
 
-                if (i !=0 && j!=0)
-	            {
-		             upperleft = grid[i-1, j-1];
-	            }
-                grid[i,j] = left + upper + upperleft;
+				if (i !=0 && j!=0)
+				{
+					 upperleft = grid[i-1, j-1];
+				}
+				grid[i,j] = left + upper + upperleft;
 			}
 		}
 		return grid[row.Length - 1 , col.Length - 1];
