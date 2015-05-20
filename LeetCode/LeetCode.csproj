@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Anagrams.cs" />
     <Compile Include="IntersectionOfTwoLinkedLists.cs" />
     <Compile Include="ListNode.cs" />
     <Compile Include="Program.cs" />

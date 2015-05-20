@@ -10,6 +10,8 @@ namespace LeetCode
     public class  IntersectionOfTwoLinkedLists{
         static Dictionary<int, short> dic;
 
+
+        //using Hashtable
         public static ListNode GetIntersectionNode(ListNode headA, ListNode headB)
         {
             dic = new Dictionary<int, short>();
@@ -49,6 +51,67 @@ namespace LeetCode
             }
         }
 
+        //solve the problem using parallel traversing
+        public static ListNode GetIntersectionNode2(ListNode headA, ListNode headB)
+        {
+            int lenA = CountLL(headA);
+            int lenB = CountLL(headB);
+
+            int diff = Math.Abs(lenA - lenB);
+            if (lenA > lenB)
+            {
+                headA = NavigateToStart(headA , diff);
+            }
+            else
+            {
+                headB = NavigateToStart(headB , diff);
+            }
+
+            ListNode intersecNode = null;
+            bool found = false;
+            while (headA != null)
+            {
+                if (headA.val == headB.val && !found)
+                {
+                    intersecNode = headA;
+                    found = true;
+                }
+                else if (headB.val != headB.val)
+                {
+                    found = false;
+                }
+                headA = headA.next;
+                headB = headB.next;
+            }
+
+            if (!found)
+            {
+                return null;
+            }
+            return intersecNode;
+        }
+
+        public static ListNode NavigateToStart(ListNode head, int step)
+        {
+            while (step != 0)
+            {
+                step--;
+                head = head.next;
+            }
+
+            return head;
+        }
+        public static int CountLL(ListNode headA)
+        {
+            int cnt = 0;
+            ListNode current = headA;
+            while (current != null)
+            {
+                current = current.next;
+                cnt++;
+            }
+            return cnt;
+        }
 
     }
 }
