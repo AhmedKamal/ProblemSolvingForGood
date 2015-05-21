@@ -1,0 +1,13 @@
+﻿		public static void Main(String[] arg)
+		{
+			//Read Input and map it to int array
+			string line = Console.ReadLine();
+			string[] numsStr = line.Split(' ');
+			int[] nums = new int[numsStr.Length];
+			for (int i = 0; i < numsStr.Length; i++)
+			{
+				nums[i] = int.Parse(numsStr[i]);
+			}
+			Console.WriteLine(Solve(nums));
+
+		}
