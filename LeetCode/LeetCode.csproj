@@ -42,10 +42,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Anagrams.cs" />
+    <Compile Include="Anagrams2.cs" />
     <Compile Include="IntersectionOfTwoLinkedLists.cs" />
     <Compile Include="ListNode.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RemoveNthNodeFromLL.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
